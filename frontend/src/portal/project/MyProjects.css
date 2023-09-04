@@ -1,0 +1,101 @@
+.myprojects{
+    box-sizing: border-box;
+    padding-left: 6.25rem;
+    padding-right: 6.25rem;
+    padding-top: 2rem;
+}
+
+.project-bar{
+    display: flex;
+    justify-content:space-between
+}
+
+.page-heading{
+  font-size: x-large;
+  font-weight: 600;
+  color: #8539b3;
+}
+
+
+
+/* Styles for the container holding the components */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    padding-top: 40px;
+  }
+
+  .create-project-button{
+    background-color: #682e8b;
+    color: rgb(210, 210, 210);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width:fit-content;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .create-project-button:hover {
+    background-color: #8539b3;
+  }
+  
+  /* Styles for the ProjectCard component */
+  .ProjectCard {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  /* Styles for the ProjectCard information */
+  .ProjectCard h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .ProjectCard p {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  /* Styles for the aim and deadline information */
+  .ProjectCard .aim {
+    font-style: italic;
+    color: #555;
+  }
+  
+  .ProjectCard .deadline {
+    color: #ff5722;
+  }
+  
+
+
+  @media (max-width: 769px){
+    .myprojects{
+        padding: 0rem 3rem;
+    }
+    /* .project-aim-div{
+        padding: 2rem 2rem;
+    }
+    .task-grid{
+        padding: 2rem 2rem;
+    } */
+}
+
+
+@media (max-width: 481px){
+    .myprojects{
+        padding: 0rem 0rem;
+    }
+    /* .project-aim-div{
+        padding: 2rem 2rem;
+    }
+    .task-grid{
+        padding: 2rem 1rem;
+    } */
+}

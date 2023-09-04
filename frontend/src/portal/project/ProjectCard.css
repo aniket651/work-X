@@ -1,0 +1,46 @@
+.project-card {
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #1b1b1b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card .project-name {
+    font-size: 1.5rem;
+    font-weight:500;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+  
+  .project-card .project-aim {
+    font-size: 14px;
+  }
+  
+  .project-card .project-deadline{
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  span{
+    font-size: 1rem;
+    font-weight: 500;
+    color:#8539b3;
+  }
+
+  .project-card-button{
+    background-color: #682e8b;
+    color: rgb(210, 210, 210);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    width:max-content;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+
+  .project-card-button:hover{
+    background-color: #8539b3;
+  }

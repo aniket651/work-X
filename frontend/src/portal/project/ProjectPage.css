@@ -1,0 +1,128 @@
+.delete-confirmation{
+    position: relative;
+    border: 1px solid #ccc;
+    /* height: 300px; */
+    /* background-color: #eb7467; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .delete-confirmation button{
+    width: fit-content;
+  }
+
+
+
+.project-page{
+    box-sizing: border-box;
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+
+
+.project-name-div{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+.project-name{
+    font-weight:600;
+    font-size:2.5rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.project-aim-div{
+    text-align: center;
+    font-weight: lighter;
+    font-size:medium;
+    padding: 2rem 5rem;
+}
+.button-div{
+    padding: 2rem 5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+.button-div button{
+    margin-bottom: 2rem;
+    color: rgb(210, 210, 210);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    width:max-content;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+
+/* .createTaskButton{
+    background-color: #F5723D;
+}
+
+.EditProjectButton{
+    background-color: #1D34F5;
+}
+
+.DeleteProjectButton{
+    background-color: #379700;
+} */
+
+.button-div button{
+    background-color: #682e8b;
+}
+
+/* .createTaskButton:hover {
+    background-color: #f05c22;
+}
+.EditProjectButton:hover{
+    background-color: rgb(29, 47, 206);
+}
+.DeleteProjectButton:hover{
+    background-color: #2d7a00;
+} */
+
+.button-div button:hover{
+    background-color: #8539b3;
+}
+
+.task-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    box-sizing: border-box;
+    padding-left: 6.25rem;
+    padding-right: 6.25rem;
+    padding-top: 2rem;
+
+    /* display: grid; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* gap: 20px; */
+    /* padding: 20px; */
+    /* padding-top: 40px; */
+}
+
+
+@media (max-width: 769px){
+    .project-page{
+        padding: 0rem 3rem;
+    }
+    .project-aim-div{
+        padding: 2rem 2rem;
+    }
+    .task-grid{
+        padding: 2rem 2rem;
+    }
+}
+
+
+@media (max-width: 481px){
+    .project-page{
+        padding: 0rem 0rem;
+    }
+    .project-aim-div{
+        padding: 2rem 2rem;
+    }
+    .task-grid{
+        padding: 2rem 1rem;
+    }
+}
+

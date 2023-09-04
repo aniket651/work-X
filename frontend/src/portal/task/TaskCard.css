@@ -1,0 +1,54 @@
+.task-card {
+    /* border: 1px solid #ccc; */
+    padding: 20px;
+    border-radius: 30px;
+    background-color: #1b1b1b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-name {
+    font-size: large;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+  .task-deadline,
+  .task-description {
+    font-size: 14px;
+    margin: 3px 0;
+  }
+  
+  .task-project {
+    font-size: 14px;
+    /* margin: 5px 0; */
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  span{
+    font-weight: 500;
+  }
+
+  hr{
+    margin: 10px 0px;
+  }
+
+  .change-button{
+    text-align: center;
+    width: 100%;
+    background-color: #682e8b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    /* width:max-content; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+
+.change-button:hover{
+    background-color: #8539b3;
+}
