@@ -1,8 +1,11 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3003',
+
+  // baseURL: 'http://localhost:3003',
+  baseURL: 'https://workx-backend.onrender.com',//do remember to change the url in auth/login as well
 });
+
 
 // Add an interceptor to include the token in the headers of all requests
 api.interceptors.request.use((config) => {
