@@ -10,7 +10,7 @@ const cors = require('cors');
 const path = require('path');
 
 
-// app.use(cors());//do remove it or configure it before pushing to production. it is here to allow requests from all sources
+app.use(cors());//do remove it or configure it before pushing to production. it is here to allow requests from all sources
 
 app.use(express.json());
 app.use('/',indexRoutes);
