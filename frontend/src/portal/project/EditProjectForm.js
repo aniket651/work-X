@@ -44,8 +44,8 @@ const EditProjectForm = () => {
                 // localStorage.removeItem("project-deadline")
             }
         } catch (error) {
-            btnPointer.innerHTML = ' Edit Project ';
-            btnPointer.removeAttribute('disabled');
+            // btnPointer.innerHTML = ' Edit Project ';
+            // btnPointer.removeAttribute('disabled');
             alert(error);
             // console.log(error);
         }

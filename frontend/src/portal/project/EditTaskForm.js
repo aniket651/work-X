@@ -55,8 +55,8 @@ const EditTaskForm = () => {
                 // localStorage.removeItem("task-deadline")
             }
         } catch (error) {
-            btnPointer.innerHTML = ' Edit Task ';
-            btnPointer.removeAttribute('disabled');
+            // btnPointer.innerHTML = ' Edit Task ';
+            // btnPointer.removeAttribute('disabled');
             alert(error);
             // console.log(error);
         }

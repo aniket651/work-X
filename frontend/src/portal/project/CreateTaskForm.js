@@ -35,8 +35,8 @@ const CreateTaskForm = () => {
                 alert("the Task is Created!!")
             }
         } catch (error) {
-            btnPointer.innerHTML = ' Create Task ';
-            btnPointer.removeAttribute('disabled');
+            // btnPointer.innerHTML = ' Create Task ';
+            // btnPointer.removeAttribute('disabled');
             alert(error);
             console.log(error);
         }

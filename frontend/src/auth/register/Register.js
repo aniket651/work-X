@@ -33,8 +33,8 @@ const Register = () => {
                 }, 500);
             }
         } catch (error) {
-            btnPointer.innerHTML = "Register";
-            btnPointer.removeAttribute('disabled');
+            // btnPointer.innerHTML = "Register";
+            // btnPointer.removeAttribute('disabled');
             alert(error);
             console.log(error);
         }
