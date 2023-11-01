@@ -16,7 +16,9 @@ const EditTaskForm = () => {
     const handleSubmit = async(e) =>{
         e.preventDefault();
         try {
-
+            const btnPointer = document.querySelector('#login-btn');
+            btnPointer.innerHTML = 'Please wait..';
+            btnPointer.setAttribute('disabled', true);
             // const response = await api.get(`/user/getUserId/${userName}`);
             // console.log(response.data);
             if(name===""){
@@ -44,6 +46,8 @@ const EditTaskForm = () => {
             })
             if(res.status === 200){
                 // console.log(res.data);
+                btnPointer.innerHTML = ' Edit Task ';
+                btnPointer.removeAttribute('disabled');
                 alert("the Task is Edited!!")
                 // localStorage.removeItem("task-assigned_to");
                 // localStorage.removeItem("task-description")
@@ -51,6 +55,8 @@ const EditTaskForm = () => {
                 // localStorage.removeItem("task-deadline")
             }
         } catch (error) {
+            btnPointer.innerHTML = ' Edit Task ';
+            btnPointer.removeAttribute('disabled');
             alert(error);
             // console.log(error);
         }
@@ -84,7 +90,7 @@ const EditTaskForm = () => {
                 <input id='task-deadline' type='date' required onChange={(e) => setDeadline(e.target.value)}/>
                 <br />  */}
                 
-                <button type='submit'> Edit Task </button>
+                <button id="#editTask-btn" type='submit'> Edit Task </button>
             </form>
         </div>
     </div>

@@ -13,6 +13,10 @@ const CreateProjectForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const btnPointer = document.querySelector('#createProject-btn');
+            btnPointer.innerHTML = 'Please wait..';
+            btnPointer.setAttribute('disabled', true);
+
             const res = await api.post("/projects", {
                 "name": name,
                 "aim": aim,
@@ -20,9 +24,13 @@ const CreateProjectForm = () => {
             })
             if (res.status === 201) {
                 // console.log(res.data);
+                btnPointer.innerHTML = ' Create Project ';
+                btnPointer.removeAttribute('disabled');
                 alert("the Project is Created!!")
             }
         } catch (error) {
+            btnPointer.innerHTML = ' Create Project ';
+            btnPointer.removeAttribute('disabled');
             alert(error);
             // console.log(error);
         }
@@ -48,7 +56,7 @@ const CreateProjectForm = () => {
                         <label htmlFor='project-deadline'>deadline of project: </label>
                         <input id='project-deadline' type='date' required onChange={(e) => setDeadline(e.target.value)} />
                         <br />
-                        <button type='submit'> Create Project </button>
+                        <button id="createProject-btn" type='submit'> Create Project </button>
                     </form>
                 </div>
             </div>

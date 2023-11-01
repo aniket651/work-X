@@ -16,7 +16,9 @@ const CreateTaskForm = () => {
     const handleSubmit = async(e) =>{
         e.preventDefault();
         try {
-
+            const btnPointer = document.querySelector('#creteTask-btn');
+            btnPointer.innerHTML = 'Please wait..';
+            btnPointer.setAttribute('disabled', true);
             // const response = await api.get(`/user/getUserId/${userName}`);
             // console.log(response.data);
 
@@ -28,9 +30,13 @@ const CreateTaskForm = () => {
             })
             if(res.status === 201){
                 // console.log(res.data);
+                btnPointer.innerHTML = ' Create Task ';
+                btnPointer.removeAttribute('disabled');
                 alert("the Task is Created!!")
             }
         } catch (error) {
+            btnPointer.innerHTML = ' Create Task ';
+            btnPointer.removeAttribute('disabled');
             alert(error);
             console.log(error);
         }
@@ -63,7 +69,7 @@ const CreateTaskForm = () => {
                     <input id='task-deadline' type='date' required onChange={(e) => setDeadline(e.target.value)}/>
                     <br />  */}
                     
-                    <button type='submit'> Create Task </button>
+                    <button id="creteTask-btn" type='submit'> Create Task </button>
                 </form>
             </div>
         </div>

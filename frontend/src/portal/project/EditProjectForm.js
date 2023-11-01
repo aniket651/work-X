@@ -14,7 +14,9 @@ const EditProjectForm = () => {
     const handleSubmit = async(e) =>{
         e.preventDefault();
         try {
-
+            const btnPointer = document.querySelector('#editProject-btn');
+            btnPointer.innerHTML = 'Please wait..';
+            btnPointer.setAttribute('disabled', true);
             // const response = await api.get(`/user/getUserId/${userName}`);
             // console.log(response.data);
             if(name===""){
@@ -33,6 +35,8 @@ const EditProjectForm = () => {
             })
             if(res.status === 200){
                 // console.log(res.data);
+                btnPointer.innerHTML = ' Edit Project ';
+                btnPointer.removeAttribute('disabled');
                 alert("the Project is Edited!!")
                 // localStorage.removeItem("project-assigned_to");
                 // localStorage.removeItem("project-aim")
@@ -40,6 +44,8 @@ const EditProjectForm = () => {
                 // localStorage.removeItem("project-deadline")
             }
         } catch (error) {
+            btnPointer.innerHTML = ' Edit Project ';
+            btnPointer.removeAttribute('disabled');
             alert(error);
             // console.log(error);
         }
@@ -69,7 +75,7 @@ const EditProjectForm = () => {
                     <input id='project-deadline' type='date' required onChange={(e) => setDeadline(e.target.value)}/>
                     <br />  */}
                     
-                    <button type='submit'> Edit Project </button>
+                    <button id="editProject-btn" type='submit'> Edit Project </button>
                 </form>
             </div>
         </div>
