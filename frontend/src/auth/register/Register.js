@@ -15,12 +15,18 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const btnPointer = document.querySelector("#register-btn");
+            btnPointer.innerHTML = "Please wait..";
+            btnPointer.setAttribute('disabled',true);
+
             const res = await api.post("/auth/register", {
                 "username": username,
                 "password": password
             })
             if (res.status === 201) {
                 // console.log(res.data);
+                btnPointer.innerHTML = "Register";
+                btnPointer.removeAttribute('disabled');
                 alert("Your Profile is Created!!")
                 setTimeout(() => {
                   navigate('/auth/login');
@@ -49,7 +55,7 @@ const Register = () => {
                         <label htmlFor='password'>Password </label>
                         <input id='password' required onChange={(e) => setPassword(e.target.value)} />
                         <br />
-                        <button type='submit'> Register </button>
+                        <button id="register-btn" type='submit'> Register </button>
                     </form>
                 </div>
             </div>
