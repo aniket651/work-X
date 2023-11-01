@@ -16,7 +16,7 @@ const EditTaskForm = () => {
     const handleSubmit = async(e) =>{
         e.preventDefault();
         try {
-            const btnPointer = document.querySelector('#login-btn');
+            const btnPointer = document.querySelector('#editTask-btn');
             btnPointer.innerHTML = 'Please wait..';
             btnPointer.setAttribute('disabled', true);
             // const response = await api.get(`/user/getUserId/${userName}`);
@@ -90,7 +90,7 @@ const EditTaskForm = () => {
                 <input id='task-deadline' type='date' required onChange={(e) => setDeadline(e.target.value)}/>
                 <br />  */}
                 
-                <button id="#editTask-btn" type='submit'> Edit Task </button>
+                <button id="editTask-btn" type='submit'> Edit Task </button>
             </form>
         </div>
     </div>
