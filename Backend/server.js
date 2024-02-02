@@ -3,7 +3,7 @@ dotenv.config({ path: './config.env' });
 
 
 var app = require("./app");
-
+const mongoose = require('mongoose');
 
 const port = process.env.PORT || 3003;
 app.set("port", port);
