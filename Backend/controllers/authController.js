@@ -27,11 +27,10 @@ exports.verifyToken = async(req, res, next) => {
       const userId = decodedToken.userId;
       console.log("userId is : "+ userId);
       // const user = await User.findOne().where('_id').equals(userId);
-      const DB = process.env.DATABASE.replace('<password>',process.env.DATABASE_PASSWORD);
-      const connect = await mongoose.connect(DB,{});
+      // const DB = process.env.DATABASE.replace('<password>',process.env.DATABASE_PASSWORD);
+      // const connect = await mongoose.connect(DB,{});
       const user = await User.findById(userId);
-      connect.disconnect();
-      console.log("hjkh");
+      // connect.disconnect();
       if (!user) {
         return res.status(401).json({ error: 'Invalid token' });
       }
@@ -49,12 +48,12 @@ exports.verifyToken = async(req, res, next) => {
 
 exports.login = async(req,res)=>{//logins and generates JWT token
     try {
-        const DB = process.env.DATABASE.replace('<password>',process.env.DATABASE_PASSWORD);
-        const connect = await mongoose.connect(DB,{});
+        // const DB = process.env.DATABASE.replace('<password>',process.env.DATABASE_PASSWORD);
+        // const connect = await mongoose.connect(DB,{});
 
         const user = await User.findOne().where('username').equals(req.body.username)
 
-        connect.disconnect();
+        // connect.disconnect();
         if(user == null){
             res.status(401).send('Invalid Credentials');
         }
@@ -80,15 +79,15 @@ exports.register = async(req,res)=>{
         // const salt = bcrypt.genSalt();
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
         console.log(process.env);
-        const DB = process.env.DATABASE.replace('<password>',process.env.DATABASE_PASSWORD);
-        const connect = await mongoose.connect(DB,{});
+        // const DB = process.env.DATABASE.replace('<password>',process.env.DATABASE_PASSWORD);
+        // const connect = await mongoose.connect(DB,{});
 
         const newUser = await User.create({
             username: req.body.username,
             password: hashedPassword
         })
 
-        connect.disconnect();
+        // connect.disconnect();
         res.status(201).send(newUser);
 
     } catch (error) {
