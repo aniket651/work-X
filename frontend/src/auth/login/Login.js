@@ -13,7 +13,7 @@ const Login = () => {
     // const [deadline, setDeadline] = useState("");
     // const navigate = useNavigate();
 
-    const loginAPI = 'http://localhost:3003/auth/login';
+    // const loginAPI = 'http://localhost:3003/auth/login';
     // const loginAPI = 'https://workx-backend.onrender.com/auth/login';
 
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ const Login = () => {
         const btnPointer = document.querySelector('#login-btn');
         btnPointer.innerHTML = 'Please wait..';
         btnPointer.setAttribute('disabled', true);
-        axios.post(loginAPI, formDataJSON).then((response) => {
+        api.post('/auth/login', formDataJSON).then((response) => {
             btnPointer.innerHTML = 'Login';
             btnPointer.removeAttribute('disabled');
             const data = response.data;

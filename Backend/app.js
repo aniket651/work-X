@@ -22,57 +22,6 @@ app.use('/user', userRoutes);
 app.use('/suggestion', suggestionRoutes);
 
 
-// app.use((err, req, res, next) => {
-//     try {
-//         console.log(res);
-//         res.send(res);
-//     } catch (err) {
-//         console.error(err.stack); // Log the error for debugging
-
-//         let statusCode = 500;
-//         let message = "Internal Server Error :)";
-
-//         if (err.code === 11000) { // Handle duplicate error as before
-//             statusCode = 400;
-//             message = `Duplicate field error.`; // More generic message
-//         } else if (err.name === "ValidationError") { // Handle validation errors
-//             statusCode = 400;
-//             message = "Validation failed. Please check your input.";
-//         } else {
-//             // Handle other errors based on error properties
-
-//         }
-
-//         res.status(statusCode).json({ error: message });
-//     }
-
-//     // console.error(err.stack); // Log the error for debugging
-
-//     // let statusCode = 500;
-//     // let message = "Internal Server Error :)";
-
-//     // if (err.code === 11000) { // Handle duplicate error as before
-//     //     statusCode = 400;
-//     //     message = `Duplicate field error.`; // More generic message
-//     // } else if (err.name === "ValidationError") { // Handle validation errors
-//     //     statusCode = 400;
-//     //     message = "Validation failed. Please check your input.";
-//     // } else {
-//     //     // Handle other errors based on error properties
-
-//     // }
-
-//     // res.status(statusCode).json({ error: message });
-
-//     // next();
-// });
-
-
-// app.use(express.static(path.join(__dirname,'./frontend/build')));
-
-// app.get('*',(req,res)=>{
-//     res.sendFile(path.join(__dirname,'./frontend/build/index.html'));
-// })
 
 
 
