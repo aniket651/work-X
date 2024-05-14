@@ -41,6 +41,19 @@ input{
     color: rgb(226, 226, 226);
 }
 
+.TaskFormUL{
+    list-style-type: none;
+    background-color: #1f1f1f00;
+    border: 0.1rem solid #682e8b;
+    border-radius: 0.4rem;
+}
+
+.TaskFormLI{
+    cursor: pointer;
+}
+.TaskFormLI:hover{
+    background-color: #8439b32f;
+}
 
 button{
     width: 100%;

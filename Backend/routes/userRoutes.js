@@ -15,12 +15,10 @@ router
     .route('/getUserName/:userId')
     .get(async(req, res) => {
         try {
-            const DB = process.env.DATABASE.replace('<password>', process.env.DATABASE_PASSWORD);
-            const connect = await mongoose.connect(DB, {});
+
 
             const user = await User.findById(req.params.userId);
 
-            connect.disconnect();
             if (user == null) {
                 res.status(404).send('no such user found !!');
             }
@@ -36,12 +34,10 @@ router
     .route('/getUserId/:username')
     .get(async(req, res) => {
         try {
-            const DB = process.env.DATABASE.replace('<password>', process.env.DATABASE_PASSWORD);
-            const connect = await mongoose.connect(DB, {});
+
 
             const user = await User.findOne().where('username').equals(req.params.username)
 
-            connect.disconnect();
             if (user == null) {
                 res.status(404).send('no such user found !!');
             }

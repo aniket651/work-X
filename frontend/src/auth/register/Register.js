@@ -14,8 +14,8 @@ const Register = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const btnPointer = document.querySelector("#register-btn");
         try {
-            const btnPointer = document.querySelector("#register-btn");
             btnPointer.innerHTML = "Please wait..";
             btnPointer.setAttribute('disabled',true);
 
@@ -33,8 +33,8 @@ const Register = () => {
                 }, 500);
             }
         } catch (error) {
-            // btnPointer.innerHTML = "Register";
-            // btnPointer.removeAttribute('disabled');
+            btnPointer.innerHTML = "Register";
+            btnPointer.removeAttribute('disabled');
             alert(error);
             console.log(error);
         }

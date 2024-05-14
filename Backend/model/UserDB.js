@@ -5,12 +5,16 @@ dotenv.config({path : '../config.env'});
 const Project = require('./ProjectDB');
 const Task = require('./TaskDB');
 
+const noSpacesValidator = function (value) {
+    return !/\s/.test(value); // Returns true if there are no spaces in the value
+};
 
 const userSchema = new mongoose.Schema({
     username:{
       type: String,
       required:[true,'a user must have name'],
-      unique: true
+      unique: true,
+      validate: [noSpacesValidator, 'Username must not contain spaces']
     },
     password:{
         type: String,

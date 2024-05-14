@@ -5,11 +5,32 @@ const User = require('../model/UserDB');
 // const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const errorHandler = require('../utils/errorHandler.js');
 
 
+// const errorHandler = (err, req, res) => {
+//   console.error(err.stack); // Log the error for debugging
+
+//   let statusCode = 500;
+//   let message = "Internal Server Error :)";
+
+//   if (err.code === 11000) { // Handle duplicate error as before
+//       statusCode = 400;
+//       message = `Duplicate field error.`; // More generic message
+//   } else if (err.name === "ValidationError") { // Handle validation errors
+//       statusCode = 400;
+//       message = "Validation failed. Please check your input.";
+//   } else {
+//       // Handle other errors based on error properties
+      
+//   }
+
+//   res.status(statusCode).json({ error: message });
+
+// }
 
 exports.verifyToken = async(req, res, next) => {
-    console.log("inside verifyToken");
+    // console.log("inside verifyToken");
     if(!req.headers.authorization){
       return res.status(401).json({ error: 'Authorization header missing' });
     }
@@ -22,10 +43,10 @@ exports.verifyToken = async(req, res, next) => {
       // Verify the JWT token
       const decodedToken = jwt.verify(token, 'my-secret-key');
       // console.log("decoded token is : "+decodedToken);
-      console.log(decodedToken);
+      // console.log(decodedToken);
 
       const userId = decodedToken.userId;
-      console.log("userId is : "+ userId);
+      // console.log("userId is : "+ userId);
       // const user = await User.findOne().where('_id').equals(userId);
       // const DB = process.env.DATABASE.replace('<password>',process.env.DATABASE_PASSWORD);
       // const connect = await mongoose.connect(DB,{});
@@ -34,7 +55,7 @@ exports.verifyToken = async(req, res, next) => {
       if (!user) {
         return res.status(401).json({ error: 'Invalid token' });
       }
-    console.log("Token Valid")
+    // console.log("Token Valid")
  
       // If token is valid, attach the user to the request object for further processing
       req.user = user;
@@ -58,7 +79,7 @@ exports.login = async(req,res)=>{//logins and generates JWT token
             res.status(401).send('Invalid Credentials');
         }
         else{
-            console.log(user)
+            // console.log(user)
             if(await bcrypt.compare(req.body.password,user.password)){
                 const token = jwt.sign({ userId: user._id }, 'my-secret-key', {
                     expiresIn: '1h', // Token will expire in 1 hour
@@ -74,11 +95,11 @@ exports.login = async(req,res)=>{//logins and generates JWT token
     }
 }
 
-exports.register = async(req,res)=>{
+exports.register = async(req,res,next)=>{
     try {
         // const salt = bcrypt.genSalt();
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
-        console.log(process.env);
+        // console.log(process.env);
         // const DB = process.env.DATABASE.replace('<password>',process.env.DATABASE_PASSWORD);
         // const connect = await mongoose.connect(DB,{});
 
@@ -92,6 +113,8 @@ exports.register = async(req,res)=>{
 
     } catch (error) {
         console.log(error);
-        res.status(500).send();
+        errorHandler(error,req,res);
+        // next();
+        // res.send(error);
     }
 }
