@@ -13,9 +13,6 @@ const Login = () => {
     // const [deadline, setDeadline] = useState("");
     // const navigate = useNavigate();
 
-    // const loginAPI = 'http://localhost:3003/auth/login';
-    // const loginAPI = 'https://workx-backend.onrender.com/auth/login';
-
     const navigate = useNavigate();
     const submitLoginForm = (event) => {
         event.preventDefault();
