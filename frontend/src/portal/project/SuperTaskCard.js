@@ -50,6 +50,7 @@ const SuperTaskCard = (props) => {
                 <div className='task-description'><span>Description: </span>{props.task.description}</div>
                 <div className='task-status'><span>Status: </span>{props.task.status}</div>
                 <div className='task-assigned_to'><span>Assigned to user: </span>{props.task.assigned_to}</div>{/*rather display the username*/}
+                <div className='task-deadline'><span>Created on: </span>{props.task.createdAt}</div>
                 <div className='task-deadline'><span>Deadline: </span>{props.task.deadline}</div>
                 <button className='edit-button' onClick={handleEdit}>Edit</button>
                 <button className='delete-button' onClick={handleDeleteClick}>Delete</button>

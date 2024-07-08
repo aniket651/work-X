@@ -20,6 +20,10 @@ const taskSchema = new mongoose.Schema({
         enum : ['completed','in-progress','pending'],
         default: 'pending'
     },
+    createdAt:{
+        type: Date,
+        default: Date.now
+    },
     deadline:{
       type: Date,
       required:[true,'deadline is must be it sooner or later']

@@ -5,6 +5,7 @@ import api from '../../api';
 import ReactLoading from "react-loading";
 import SuperTaskCard from './SuperTaskCard';
 import "./ProjectPage.css"
+// import { Gantt, Task, EventOption, StylingOption, ViewMode, DisplayOption } from 'gantt-task-react';
 
 
 const ProjectPage = (props) => {
@@ -13,7 +14,7 @@ const ProjectPage = (props) => {
   const [projectDetails, setProjectDetails] = useState({});
   const [taskList, setTaskList] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  // const [tasks, setTasks] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,6 +34,25 @@ const ProjectPage = (props) => {
         console.log(res.data);
         setProjectDetails(res.data);
         setTaskList(res.data.tasks);
+        // let tasks = res.data.tasks.map((item,index)=>{
+        //   console.log(item);
+        //   console.log(new Date(item.createdAt));
+        //   let startDate = new Date(item.createdAt);
+        //   let endDate = new Date(item.deadline);
+        //   const obj = {
+        //     start: startDate,
+        //     end: endDate,
+        //     name: item.name,
+        //     id: item._id,
+        //     type: 'task',
+        //     progress: 100,
+        //     isDisabled: true,
+        //     styles: { progressColor: '#ffbb54', progressSelectedColor: '#ff9e0d' }
+        //   }
+        //   console.log(obj);
+        //   return obj
+        // })
+        // setTasks(tasks);
       }
 
     } catch (error) {
@@ -104,12 +124,20 @@ const ProjectPage = (props) => {
           )}
         </div>
 
-        <div className='task-grid'>
+        {/* <div className='task-grid'>
+          {console.log(taskList)}
           {taskList.map((item, index) => (
             <SuperTaskCard key={index} projectId={projectId} task={item} />
           ))}
-        </div>
+        </div> */}
+
+        
+          {/* <Gantt tasks={tasks} /> */}
+        
       </div>
+
+
+
     )
   )
 }

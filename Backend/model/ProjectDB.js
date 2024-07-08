@@ -18,6 +18,10 @@ const projectSchema = new mongoose.Schema({
     aim:{
       type: String,
     },
+  //   createdAt:{
+  //     type: Date,
+  //     default: Date.now
+  // },
     deadline:{
       type: Date,
       required:[true,'deadline is must be it sooner or later']
