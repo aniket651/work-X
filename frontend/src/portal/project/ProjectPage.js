@@ -124,12 +124,12 @@ const ProjectPage = (props) => {
           )}
         </div>
 
-        {/* <div className='task-grid'>
+        <div className='task-grid'>
           {console.log(taskList)}
           {taskList.map((item, index) => (
             <SuperTaskCard key={index} projectId={projectId} task={item} />
           ))}
-        </div> */}
+        </div>
 
         
           {/* <Gantt tasks={tasks} /> */}
