@@ -54,7 +54,7 @@ const Login = () => {
                 <div className='form-div'>
                     <form id="loginForm" onSubmit={submitLoginForm}>
                         <label htmlFor='username'>Username </label>
-                        <input id='username' name="username" required  />
+                        <input id='username' name="username" required pattern="^\S*$" title="No spaces allowed" />
                         <br />
                         <label htmlFor='password'>Password </label>
                         <input id='password' name="password" required  />

@@ -52,7 +52,7 @@ const Register = () => {
                 <div className='form-div'>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor='username'>Username </label>
-                        <input id='username' required onChange={(e) => setUsername(e.target.value)} />
+                        <input id='username' pattern="^\S*$" title="No spaces allowed" required onChange={(e) => setUsername(e.target.value)} />
                         <br />
                         <label htmlFor='password'>Password </label>
                         <input id='password' required onChange={(e) => setPassword(e.target.value)} />
