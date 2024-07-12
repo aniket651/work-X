@@ -46,7 +46,7 @@ const EditProjectForm = () => {
         } catch (error) {
             // btnPointer.innerHTML = ' Edit Project ';
             // btnPointer.removeAttribute('disabled');
-            alert(error);
+            alert(error.response.data.error);
             // console.log(error);
         }
         

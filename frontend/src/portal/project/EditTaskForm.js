@@ -55,7 +55,7 @@ const EditTaskForm = () => {
                 alert("the Task is Edited!!")
             }
         } catch (error) {
-            alert(error);
+            alert(error.response.data.error);
         }
         
     }
@@ -67,7 +67,7 @@ const EditTaskForm = () => {
             // console.log(res.data);
             setUserSuggestions(res.data);
         } catch (error) {
-            alert(error);
+            alert(error.response.data.error);
             console.log(error);
         }
 

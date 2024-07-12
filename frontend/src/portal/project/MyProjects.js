@@ -34,7 +34,7 @@ const MyProjects = (props) => {
 
     } catch (error) {
       setLoading(false);
-      alert(error);
+      alert(error.response.data.error);
       // console.log(error);
     }
   }

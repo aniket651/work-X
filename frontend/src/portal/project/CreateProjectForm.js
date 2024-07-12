@@ -31,8 +31,8 @@ const CreateProjectForm = () => {
         } catch (error) {
             // btnPointer.innerHTML = ' Create Project ';
             // btnPointer.removeAttribute('disabled');
-            alert(error);
-            // console.log(error);
+            alert(error.response.data.error);
+            console.log(error);
         }
 
     }

@@ -1,10 +1,11 @@
 const express = require('express');
 
 
-const errorHandler = (err, req, res) => {
+exports.generalErrorHandler = (err, req, res) => {
+    console.log("inside generalErrorHandler");
     // console.error(err.stack); // Log the error for debugging
     console.error(err.code); // Log the error for debugging
-
+    
     let statusCode = 500;
     let message = "Internal Server Error :)";
 
@@ -22,4 +23,7 @@ const errorHandler = (err, req, res) => {
     res.status(statusCode).json({ error: message });
 
 }
- module.exports = errorHandler;
+
+exports.customErrorHandler = (req, res, statusCode, msg) => {
+    res.status(statusCode).json({ error: msg });
+}

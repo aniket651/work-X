@@ -34,29 +34,11 @@ const ProjectPage = (props) => {
         console.log(res.data);
         setProjectDetails(res.data);
         setTaskList(res.data.tasks);
-        // let tasks = res.data.tasks.map((item,index)=>{
-        //   console.log(item);
-        //   console.log(new Date(item.createdAt));
-        //   let startDate = new Date(item.createdAt);
-        //   let endDate = new Date(item.deadline);
-        //   const obj = {
-        //     start: startDate,
-        //     end: endDate,
-        //     name: item.name,
-        //     id: item._id,
-        //     type: 'task',
-        //     progress: 100,
-        //     isDisabled: true,
-        //     styles: { progressColor: '#ffbb54', progressSelectedColor: '#ff9e0d' }
-        //   }
-        //   console.log(obj);
-        //   return obj
-        // })
-        // setTasks(tasks);
+
       }
 
     } catch (error) {
-      alert(error);
+      alert(error.response.data.error);
       // console.log(error);
     }
   }
@@ -76,7 +58,7 @@ const ProjectPage = (props) => {
       }
     } catch (error) {
       setShowConfirm(false);
-      alert(error);
+      alert(error.response.data.error);
       // console.log(error);
     }
   }

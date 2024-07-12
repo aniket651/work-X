@@ -35,7 +35,7 @@ const Register = () => {
         } catch (error) {
             btnPointer.innerHTML = "Register";
             btnPointer.removeAttribute('disabled');
-            alert(error);
+            alert(error.response.data.error);
             console.log(error);
         }
 

@@ -39,7 +39,8 @@ const Login = () => {
         }).catch((error) => {
             btnPointer.innerHTML = 'Login';
             btnPointer.removeAttribute('disabled');
-            alert(error);
+            console.log(error);
+            alert(error.response.data.error);
         });
     }
 

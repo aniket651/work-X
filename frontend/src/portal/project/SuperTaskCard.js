@@ -29,7 +29,7 @@ const SuperTaskCard = (props) => {
                 alert("the task is deleted !! refresh to see changes")
             }
         } catch (error) {
-            alert(error);
+            alert(error.response.data.error);
             // console.log(error);
             setShowConfirm(false);
         }
