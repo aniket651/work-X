@@ -63,8 +63,8 @@ exports.changeTask = async(req,res)=>{
             errorHandler.customErrorHandler(req, res, 403, 'Access Not Granted to this Project !!!');
             return;
         }
-        let newName = req.body.name;
-        let newDescription = req.body.description;
+        // let newName = req.body.name;
+        // let newDescription = req.body.description;
         let newDeadline = req.body.deadline;
         let newAssigned_to = req.body.assigned_to;
         const assignedUser = await User.findOne({ username: newAssigned_to});
@@ -74,13 +74,13 @@ exports.changeTask = async(req,res)=>{
         }
         
         const newTask = await Task.findByIdAndUpdate(req.params.taskId,{
-            name: newName,
-            description: newDescription,
+            // name: newName,
+            // description: newDescription,
             deadline: newDeadline,
             assigned_to: newAssigned_to
         },{new:true})
 
-
+        console.log(newTask);
         // connect.disconnect();
         res.status(200).send(newTask);
     } catch (error) {

@@ -19,13 +19,18 @@ const EditProjectForm = () => {
             btnPointer.setAttribute('disabled', true);
             // const response = await api.get(`/user/getUserId/${userName}`);
             // console.log(response.data);
-            if(name===""){
+            if(name==""){
+                console.log(localStorage.getItem("project-name"));
                 setName(localStorage.getItem("project-name"));
             }
-            if(aim===""){
+            if(aim==""){
+                console.log(localStorage.getItem("project-aim"));
+
                 setAim(localStorage.getItem("project-aim"));
             }
             if(deadline===null){
+                console.log(localStorage.getItem("project-deadline"));
+
                 setDeadline(localStorage.getItem("project-deadline"));
             }
             const res = await api.patch(`/projects/${projectId}`, {

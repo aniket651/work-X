@@ -7,7 +7,7 @@ const api = axios.create({
 });
 
 
-// Add an interceptor to include the token in the headers of all requests
+//an interceptor to include the token in the headers of all requests
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('user-token');
   if (token) {

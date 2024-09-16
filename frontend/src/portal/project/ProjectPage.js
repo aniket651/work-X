@@ -95,7 +95,7 @@ const ProjectPage = (props) => {
         {/* <div>deadline: {projectDetails.deadline}</div> */}
         <div className='button-div'>
           <button className='createTaskButton' onClick={handleCreateTask}>Create New Task</button>
-          <button className='EditProjectButton' onClick={handleEditProject}>Edit Project</button>
+          {/* <button className='EditProjectButton' onClick={handleEditProject}>Edit Project</button> */}
           <button className='DeleteProjectButton' onClick={handleDeleteClick}>Delete Project</button>
           {showConfirm && (
             <div className='delete-confirmation'>

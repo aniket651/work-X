@@ -31,12 +31,15 @@ const EditTaskForm = () => {
             btnPointer.setAttribute('disabled', true);
             // const response = await api.get(`/user/getUserId/${userName}`);
             // console.log(response.data);
-            if(name===""){
-                setName(localStorage.getItem("task-name"));
-            }
-            if(description===""){
-                setDescription(localStorage.getItem("task-description"));
-            }
+            // console.log("name is: ",name);
+            // if(name===null){
+            //     console.log("name is not there");
+            //     console.log(localStorage.getItem("task-name"))
+            //     setName(localStorage.getItem("task-name"));
+            // }
+            // if(description===null){
+            //     setDescription(localStorage.getItem("task-description"));
+            // }
             if(deadline===null){
                 setDeadline(localStorage.getItem("task-deadline"));
             }
@@ -44,8 +47,8 @@ const EditTaskForm = () => {
                 setAssigned_to(localStorage.getItem("task-assigned_to"));
             }
             const res = await api.patch(`/projects/${projectId}/${taskId}`, {
-                "name": name,
-                "description": description,
+                // "name": name,
+                // "description": description,
                 "deadline": deadline,
                 "assigned_to": assigned_to
             })
@@ -92,12 +95,12 @@ const EditTaskForm = () => {
 
         <div className='form-div'>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='task-name'>name of task: </label>
+                {/* <label htmlFor='task-name'>name of task: </label>
                 <input id='task-name' onChange={(e) => setName(e.target.value)} />
                 <br /> 
                 <label htmlFor='task-description'>description of task: </label>
                 <input id='task-description' onChange={(e) => setDescription(e.target.value)} />
-                <br /> 
+                <br />  */}
                 <label htmlFor='task-deadline'>deadline of task: </label>
                 <input id='task-deadline' type='date'  onChange={(e) => setDeadline(e.target.value)}/>
                 <br /> 
