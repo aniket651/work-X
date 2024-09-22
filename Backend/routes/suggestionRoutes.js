@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const logger = require('../utils/logger.js').logger;
 // const tourController = require('../controllers/tourController');
 // const projectController = require('../controllers/projectController');
 // const taskController = require('../controllers/taskController');
@@ -14,6 +15,7 @@ const router = express.Router();
 router
     .route('/user/:username')
     .get(async(req, res) => {
+        logger.debug("request received for user suggestion");
         const query = req.params.username;
         try {
 
@@ -22,6 +24,7 @@ router
               }).limit(5);
               res.status(200).send(users);
         } catch (error) {
+            logger.error(`error in getting user suggestion: ${error}`);
             res.status(500).send(error);
         }
     });

@@ -8,17 +8,27 @@ const mongoose = require('mongoose');
 const port = process.env.PORT || 3003;
 app.set("port", port);
 
+const logger = require('./utils/logger.js').logger;
+const timer = require('./utils/timer.js');
+
+
+
+
 const connectDatabase = async () => {
   try {
+    timer.time("connecting database");
     const DB = process.env.DATABASE.replace('<password>', process.env.DATABASE_PASSWORD);
     const connect = await mongoose.connect(DB, {});
   } catch (error) {
-    console.log(`error in connecting database: ${error}`)
+    logger.error(`error in connecting database: ${error}`)
+  }
+  finally{
+    timer.timeEnd("connecting database");
   }
 }
 
 
 const server = app.listen(port, () => {
   connectDatabase();
-  console.log(`App running on port ${port}...`);
+  logger.info(`App running on port ${port}...`);
 });

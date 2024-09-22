@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const express = require('express');
+const logger = require('../utils/logger.js').logger;
 // const tourController = require('../controllers/tourController');
 const projectController = require('../controllers/projectController');
 const taskController = require('../controllers/taskController');
@@ -15,7 +16,7 @@ router
     .route('/getUserName/:userId')
     .get(async(req, res) => {
         try {
-
+            looger.debug("request received to find user by userId");
 
             const user = await User.findById(req.params.userId);
 
@@ -26,6 +27,7 @@ router
                 "username":user.username
             });
         } catch (error) {
+            logger.error(`error in finding user by given userId: ${error}`);
             res.status(500).send(error);
         }
     });
