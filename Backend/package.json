@@ -2,6 +2,9 @@
   "name": "v1",
   "version": "1.0.0",
   "description": "work flow management web app",
+  "engines": {
+    "node": ">=16.x"
+  },
   "main": "app.js",
   "scripts": {
     "start": "node server.js",
