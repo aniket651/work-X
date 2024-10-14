@@ -1,3 +1,10 @@
+.AuthPage{
+    min-height: 100vh;
+    background: radial-gradient(at 47.92760660924319% 49.75649705123235%, #405e78 0px, transparent 50%), radial-gradient(at 0.9192308918445965% 93.92648014876536%, #47666e 0px, transparent 50%), radial-gradient(at 97.90047448900025% 3.7836575007387996%, #4f6b61 0px, transparent 50%) #000000;
+    mix-blend-mode: var(--_mesh-gradient-blend-mode);
+}
+
+/* Element design */
 /* .form-heading{
     text-align: center;
     font-size:x-large;
@@ -18,7 +25,7 @@
     width: 300px;
     min-height:375px;
     padding: 2rem 2rem;
-    background-color:#1b1b1b;
+    background-color:#ffffff20;
 }
 form{
     box-sizing: border-box; 
@@ -37,9 +44,3 @@ input{
     border-radius: 0.4rem;
     color: rgb(226, 226, 226);
 } */
-
-
-button{
-    width: 100%;
-    border-radius: 30px;
-}

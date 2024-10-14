@@ -1,8 +1,48 @@
-.body{
+@keyframes showTopText {
+    0% {
+        top : 100px;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    30% {
+        /* visibility: hidden; */
+        transform: translate3d(0, 50%, 0);
+    }
+
+    100% {
+        top: 0px;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fading {
+    0%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 0;
+    }
+    
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+.body {
     box-sizing: border-box;
-    min-height:calc(100vh - 0px);
+    min-height: calc(100vh - 0px);
     /* background: linear-gradient(90deg, #000000 0%, #3d3d3d 100%); */
-    background-image: linear-gradient(90deg, #000000 0%, #0000008d 70%, #000000a9 100%), url("../../../public/landingPageImg5.jpg");
+    /* background-image: linear-gradient(90deg, #000000 0%, #0000008d 70%, #000000a9 100%), url("../../../public/landingPageImg5.jpg"); */
+
+    /* background: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
+    background: rgb(0, 0, 0);
+
+
+
+
+
     background-size: cover;
     background-position: center;
     /* box-sizing: border-box; */
@@ -11,39 +51,97 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     color: white;
     font-family: monospace;
 }
 
-.welcome{
-    /* justify-content: center; */
-    font-size: 1.2rem;
-    font-weight: 600;
+.glowing-arc-up {
+    position: fixed;
+    bottom: 50vh;
+    width: 600px;
+    /*500 */
+    height: 300px;
+    /*250*/
+    border-bottom-left-radius: 600px;
+    /*500*/
+    border-bottom-right-radius: 600px;
+    /*500*/
+    background-color: black;
+    /* position: relative; */
+    box-shadow: 0px 30px 20px -20px rgba(0, 255, 255, 0.6);
+    /* Glow effect */
 }
 
-.brand-name{
+.glowing-arc-down {
+    position: fixed;
+    top: 50vh;
+    width: 600px;
+    /*500 */
+    height: 300px;
+    /*250*/
+    border-top-left-radius: 600px;
+    /*500*/
+    border-top-right-radius: 600px;
+    /*500*/
+    background-color: black;
+    /* position: relative; */
+    box-shadow: 0px -30px 20px -20px rgba(0, 255, 255, 0.6);
+    /* Glow effect */
+}
+
+
+.box-up{
+    position: absolute;
+    z-index: 2;
+    bottom: 51vh;
+    overflow: hidden;
+    /* border: 5px solid yellow; */
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.brand-name {
+    position: relative;
+    bottom: 0px;
     font-size: 4.5rem;
-    font-weight:lighter;
-    color: yellow;
+    font-weight: lighter;
+    color: rgb(184 219 219 / 60%);
+    animation: showTopText 2s;
 }
 
-.subheading{
-    font-size:1.5rem;
-    font-weight:lighter;
-    max-width: 700px;
+.box-down{
+    position: absolute;
+    z-index: 2;
+    top: 51vh;
+    /* display: flex; */
+    /* overflow: hidden; */
+    /* border: 5px solid yellow; */
+    /* border-bottom-left-radius: 50px; */
+    /* border-bottom-right-radius: 50px; */
+}
+.subheading {
+    font-size: 1rem;
+    font-weight: 400;
+    max-width: 600px;
+    padding-top: 3rem;
     padding-bottom: 3rem;
+    /* display: flex; */
+    text-align: center;
+    color: rgb(184 219 219 / 60%);
+    animation: fading 4s;
+    /* animation-delay: 3s; */
 }
 
-.get-started{
+.get-started {
     font-size: 1.2rem;
-    font-weight:100;
-    color: antiquewhite;
+    font-weight: 100;
+    color: rgba(0, 255, 255, 0.6);
 
 }
 
-.buttons-div{
-    max-width: 400px;
+.buttons-div {
+    /* max-width: 400px; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
@@ -54,14 +152,15 @@
 
     /* display: grid; */
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    animation: fading 5s;
 }
 
 
 
 
-.buttons-div .login{
+.buttons-div .login {
     width: 100%;
-    background-color: #636363;
+    background-color: rgb(184 219 219 / 60%);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -72,9 +171,9 @@
     transition: background-color 0.3s ease;
 }
 
-.buttons-div .register{
+.buttons-div .register {
     width: 100%;
-    background-color: #636363;
+    background-color: rgb(184 219 219 / 60%);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -85,17 +184,17 @@
     transition: background-color 0.3s ease;
 }
 
-.buttons-div .login:hover{
-    background-color: #d3b50b;
+.buttons-div .login:hover {
+    background-color: rgba(0, 255, 255, 0.6);
 }
 
-.buttons-div .register:hover{
-    background-color: #d3b50b;
+.buttons-div .register:hover {
+    background-color: rgba(0, 255, 255, 0.6);
 }
 
 
-@media (max-width: 481px){
-    .body{
+@media (max-width: 481px) {
+    .body {
         padding: 2rem 2rem;
     }
 }

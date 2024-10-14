@@ -1,3 +1,4 @@
+import './App.css';
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import PortalNavbar from "./portal/navbar/PortalNavbar";
@@ -16,8 +17,10 @@ function App() {
  
     return (
         <React.Fragment>
+            <div className='App'>
             {isLoggedIn && <PortalNavbar />}
             <Outlet />
+            </div>
         </React.Fragment>
     );
 }
